@@ -1,0 +1,54 @@
+IDENTIFICATION DIVISION.
+PROGRAM-ID. Calcolatrice.
+
+AUTHOR.     Roberto.
+DATA DIVISION.
+
+WORKING-STORAGE SECTION.
+
+01 num1    PIC 9(5).   
+
+01 num2    PIC 9(5).
+
+01 oper    PIC x.
+
+01 res     PIC 9(10).
+
+
+PROCEDURE DIVISION.
+    
+	DISPLAY "CALCOLATRICE".
+    
+	DISPLAY "Inserisci primo numero ". 
+   
+	ACCEPT num1.
+    DISPLAY "Inserisci secondo numero: ".
+   
+	ACCEPT num2.
+    DISPLAY "Inserisci operazione ".
+   
+	ACCEPT oper.
+    
+	IF oper="+" THEN 
+      
+		ADD num1,num2 GIVING res.
+ 
+    
+	IF oper="-" THEN
+        
+		SUBTRACT num1 FROM num2 GIVING res.
+        
+    
+	IF oper="*" THEN
+        
+		MULTIPLY num1 BY num2 GIVING res.
+    
+    
+	IF oper="/" THEN 
+        
+		DIVIDE num1 BY num2 GIVING res.
+    
+	DISPLAY "risultato: " res.
+
+
+STOP RUN.
